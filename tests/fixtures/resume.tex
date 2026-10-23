@@ -1,0 +1,72 @@
+% Synthetic document used only by automated tests.
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=16mm]{geometry}
+\usepackage{xcolor,enumitem,titlesec,hyperref}
+\definecolor{navy}{HTML}{17384D}
+\definecolor{muted}{HTML}{52616C}
+\hypersetup{colorlinks=true,urlcolor=navy,pdftitle={Alex Example - Resume},pdfauthor={Alex Example}}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=13pt,itemsep=1pt,topsep=3pt,parsep=0pt}
+\titleformat{\section}{\large\bfseries\color{navy}}{}{0pt}{}[\vspace{-5pt}\rule{\linewidth}{0.4pt}]
+\titlespacing*{\section}{0pt}{7pt}{4pt}
+\newcommand{\role}[4]{\textbf{#1}\hfill{\small #2}\\{\color{muted}#3\hfill #4}\par}
+\begin{document}
+{\fontsize{27}{29}\selectfont\bfseries\color{navy} ALEX EXAMPLE}\par
+\vspace{5pt}
+{\large Cloud Engineering \textbar\ Software Engineering \textbar\ Business Systems}\par
+\vspace{5pt}
+\textbf{Example City \textbar\ Available for opportunities}\par
+\vspace{3pt}
+\href{mailto:alex@example.com}{alex@example.com}
+\textbar\ \href{tel:+10000000000}{+1 000 000 0000}
+
+\section{Profile}
+Example IT professional delivering software, cloud systems and user support.
+
+\section{Technical and Business Skills}
+\textbf{Cloud:} AWS cloud engineering\\
+\textbf{Development:} Python, React, Next.js, Node.js, Express.js, .NET, Laravel, MongoDB\\
+\textbf{Delivery and tools:} Azure DevOps CI/CD, Figma, Adobe XD, Excel, Selenium, Scrapy\\
+\textbf{Business systems:} Requirements gathering, workflow analysis, user support, testing, documentation, training
+
+\section{Professional Experience}
+\role{Business Systems Analyst / Team Leader}{Aug 2024 -- Present}{Example Manufacturing}{Example City}
+\begin{itemize}
+\item Serve as the sole engineer, delivering AWS cloud engineering and software development.
+\item Optimised production workflows and reduced material waste.
+\item Built warehouse tools with barcode scanning and automated product entry.
+\item Gather requirements for inventory and production systems.
+\item Test changes, troubleshoot issues and train employees.
+\item Lead the afternoon production team, coordinate priorities and communicate operational requirements and risks to management.
+\end{itemize}
+\vspace{4pt}
+\role{Computer Science Instructor}{Mar 2023 -- Aug 2024}{Example University}{Example City}
+\begin{itemize}
+\item Delivered programming and data structures workshops.
+\item Mentored students through software development projects.
+\end{itemize}
+\vspace{4pt}
+\role{Software Engineer}{Jul 2022 -- Mar 2023}{Example University}{Example City}
+\begin{itemize}
+\item Designed and implemented a conservation portal.
+\item Automated data ingestion with Python.
+\item Built internal systems and reviewed code.
+\end{itemize}
+\vspace{4pt}
+\role{Software Developer}{Feb 2020 -- Jul 2022}{Example Software}{Example City}
+\begin{itemize}
+\item Developed and maintained SaaS applications.
+\item Built CI/CD pipelines for microservices.
+\item Created UX/UI prototypes and data analysis tools.
+\end{itemize}
+
+\section{Education and Recognition}
+\textbf{Bachelor of Computer Science, Example University}\hfill Mar 2020 -- Nov 2022\\
+Example City\\
+{\small Example Education Award; Example University STEM Scholarship; Example College Academic Merit Scholarship. Achieved 92\% WAM at Example College.}
+\end{document}
