@@ -24,6 +24,7 @@ export function renderPage(parsed, revision) {
     '</head><body><a class="skip-link" href="#content">Skip to resume</a>',
     '<nav class="toolbar" aria-label="Resume actions"><div class="toolbar-inner">',
     '<a class="identity" href="#top">' + nameText + '</a>',
+    '<a href="resume.md" download="somethea-siek-resume.md">Markdown</a>',
     '<a class="button button-small" href="resume.pdf" download="somethea-siek-resume.pdf">Download PDF <span aria-hidden="true">↓</span></a>',
     '</div></nav><main id="top"><header class="hero">',
     '<p class="eyebrow">RESUME</p><h1>' + nameText + '</h1>',
@@ -31,10 +32,7 @@ export function renderPage(parsed, revision) {
     '<div class="hero-details"><div class="location">' + headerText(location) + '</div>',
     '<div class="contact">' + headerText(contact) + '</div></div>',
     '</header><article class="resume-body" id="content" aria-label="Resume">',
-    body, '</article></main><footer>',
-    '<p>' + nameText + '</p><nav aria-label="Document formats">',
-    '<a href="resume.pdf" download="somethea-siek-resume.pdf">PDF</a>',
-    '<a href="resume.md" download="somethea-siek-resume.md">Markdown</a>',
-    '</nav></footer></body></html>',
+    body, '</article></main>',
+    '</body></html>',
   ].join('\n');
 }
