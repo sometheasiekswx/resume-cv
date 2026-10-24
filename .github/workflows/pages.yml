@@ -8,10 +8,12 @@ permissions:
   contents: read
 concurrency:
   group: resume-${{ github.ref }}
-  cancel-in-progress: true
+  # Finish a production publication before starting the next one.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 jobs:
   build:
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
@@ -35,6 +37,29 @@ jobs:
       - run: npm test
       - run: npm run build
       - run: npm run check
+      - name: Prepare the checked static Vercel deployment
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        env:
+          VERCEL_ORG_ID: team_QmjRFzULoHfOTipsjFByfxON
+          VERCEL_PROJECT_ID: prj_LcgDZVTASVqNx1TK1UJU2yh2HoLp
+        run: node scripts/vercel.mjs prepare
+      - name: Install pinned Vercel CLI
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        run: npm install --global --ignore-scripts vercel@65.2.0
+      - name: Publish the same checked artifact to Vercel
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_TELEMETRY_DISABLED: '1'
+        run: |
+          if [ -z "$VERCEL_TOKEN" ]; then
+            echo '::error::Add the VERCEL_TOKEN repository Actions secret before publishing.'
+            exit 1
+          fi
+          vercel deploy --prebuilt --prod --yes --scope somethea-sieks-projects --cwd .build/vercel
+      - name: Verify Vercel PDF, Markdown and website against this build
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        run: node scripts/vercel.mjs verify https://resume-cv-silk.vercel.app/
       - name: Configure Pages
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5

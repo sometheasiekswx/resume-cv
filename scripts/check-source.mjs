@@ -8,8 +8,8 @@ export const sourceFiles = [
   'resume/main.tex', 'scripts/build.mjs', 'scripts/check.mjs',
   'scripts/check-source.mjs', 'scripts/dev.mjs', 'scripts/document.mjs',
   'scripts/page.mjs', 'scripts/presentation.mjs', 'scripts/publication.mjs',
-  'scripts/setup.mjs', 'scripts/tools.mjs', 'site/styles.css',
-  'tests/fixtures/resume.tex', 'tests/pipeline.test.mjs', 'tests/publication.test.mjs',
+  'scripts/setup.mjs', 'scripts/tools.mjs', 'scripts/vercel.mjs', 'site/styles.css',
+  'tests/fixtures/resume.tex', 'tests/pipeline.test.mjs', 'tests/publication.test.mjs', 'tests/vercel.test.mjs',
 ];
 
 export function validateSourceFiles(paths) {

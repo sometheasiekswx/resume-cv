@@ -22,7 +22,9 @@
 !/scripts/publication.mjs
 !/scripts/setup.mjs
 !/scripts/tools.mjs
+!/scripts/vercel.mjs
 !/site/styles.css
 !/tests/fixtures/resume.tex
 !/tests/pipeline.test.mjs
 !/tests/publication.test.mjs
+!/tests/vercel.test.mjs
