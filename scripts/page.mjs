@@ -35,7 +35,6 @@ export function renderPage(parsed, revision) {
     '<p>' + nameText + '</p><nav aria-label="Document formats">',
     '<a href="resume.pdf" download="somethea-siek-resume.pdf">PDF</a>',
     '<a href="resume.md" download="somethea-siek-resume.md">Markdown</a>',
-    '<a href="https://github.com/sometheasiekswx/resume-cv">GitHub</a>',
     '</nav></footer></body></html>',
   ].join('\n');
 }
